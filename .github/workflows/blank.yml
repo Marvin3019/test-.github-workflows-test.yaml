@@ -25,14 +25,18 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, world! > test.txt
+        run: |
+          echo Hello, world! > test.txt
+          pwd
+          ls -l
 
       #
       - uses: MeilCli/slack-upload-file@v3
         with:
           slack_token: ${{ secrets.SLACK_TOKEN }}
           channel_id: ${{ secrets.SLACK_CHANNEL_ID }}
+          file_path: 'test.txt'
           content: 'file content'
           file_name: 'text.txt'
-          title: 'title of file'
+          title: 'Expired Cronjobs'
           initial_comment: 'post by slack-upload-file'
