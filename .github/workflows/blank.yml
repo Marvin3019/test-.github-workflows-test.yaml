@@ -26,7 +26,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
-          echo Hello, world! > test.txt
+          echo Hello, world! \n marvin s. espineda > test.txt
           pwd
           ls -l
 
@@ -39,4 +39,4 @@ jobs:
           content: 'file content'
           file_name: 'text.txt'
           title: 'Expired Cronjobs'
-          initial_comment: 'post by slack-upload-file'
+          initial_comment: 'Expired Cronjobs'
